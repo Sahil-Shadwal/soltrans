@@ -5,7 +5,6 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 export const WalletConnection: FC = () => {
   const { connected, connecting, disconnect } = useWallet();
 
-  // Handle connection changes
   useEffect(() => {
     if (connected) {
       console.log("Wallet connected successfully");
@@ -15,9 +14,12 @@ export const WalletConnection: FC = () => {
   return (
     <div className="wallet-container">
       <WalletMultiButton />
-      {connected && <button onClick={disconnect}>Disconnect</button>}
+      {connected && (
+        <button className="disconnect-btn" onClick={disconnect}>
+          Disconnect
+        </button>
+      )}
       <div className="status">
-        Status:{" "}
         {connecting
           ? "Connecting..."
           : connected

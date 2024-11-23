@@ -3,40 +3,93 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.wallet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Style the Wallet Multi Button */
+.wallet-adapter-button {
+  background: linear-gradient(45deg, #3a3a3a, #1a1a1a) !important;
+  border: none !important;
+  color: white !important;
+  padding: 12px 24px !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  width: 200px;
+}
+
+.wallet-adapter-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(45deg, #4a4a4a, #2a2a2a) !important;
+}
+
+/* Disconnect button styling */
+.disconnect-btn {
+  background: linear-gradient(45deg, #ff4b4b, #ff3333);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  width: 200px;
+  opacity: 0.9;
+}
+
+.disconnect-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.status {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .wallet-container {
+    padding: 1.5rem;
+    margin: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .wallet-adapter-button,
+  .disconnect-btn {
+    width: 180px;
+    font-size: 14px !important;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 480px) {
+  .wallet-container {
+    padding: 1rem;
+    margin: 0.5rem;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .wallet-adapter-button,
+  .disconnect-btn {
+    width: 160px;
+    font-size: 13px !important;
+  }
 }
