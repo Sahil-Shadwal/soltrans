@@ -1,15 +1,9 @@
+import { FC, ReactNode } from "react";
 import { WalletProvider } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
-import { WalletConnectWalletAdapter } from "@solana/wallet-adapter-walletconnect";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import { FC, ReactNode } from "react";
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
 
-const wallets = [
-  new WalletConnectWalletAdapter({
-    network: WalletAdapterNetwork.Devnet,
-    options: {},
-  }),
-];
+const wallets = [new PhantomWalletAdapter()];
 
 export const WalletContextProvider: FC<{ children: ReactNode }> = ({
   children,

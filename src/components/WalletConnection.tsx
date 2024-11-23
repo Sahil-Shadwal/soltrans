@@ -9,8 +9,6 @@ export const WalletConnection: FC = () => {
   useEffect(() => {
     if (connected) {
       console.log("Wallet connected successfully");
-    } else {
-      console.log("Wallet not connected");
     }
   }, [connected]);
 
